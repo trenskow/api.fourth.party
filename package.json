@@ -1,0 +1,27 @@
+{
+  "name": "api.fourth.party",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "hat": "0.0.3",
+    "isvalid": "^1.6.6",
+    "jsonerr": "^1.1.0",
+    "jws": "^3.1.5",
+    "keyd": "^1.0.1",
+    "merge": "^1.2.1",
+    "mime-types": "^2.1.21",
+    "moment": "^2.22.0",
+    "mongoose": "^5.3.13",
+    "otplib": "^10.0.1",
+    "qr-image": "^3.2.0"
+  }
+}
