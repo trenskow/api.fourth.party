@@ -39,11 +39,6 @@ mongoose.connect(process.env.MONGODB || 'mongodb://localhost/fourthparty', {
 		req.entities = {};
 	}));
 
-	app.use(app.async(async (req, res) => {
-		res.header('Access-Control-Allow-Origin', '*');
-		res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
-	}));
-
 	app.use(require('./lib/middleware'));
 	app.use('/', require('./lib/api'));
 
