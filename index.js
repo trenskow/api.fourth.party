@@ -39,13 +39,10 @@ mongoose.connect(process.env.MONGODB || 'mongodb://localhost/fourthparty', {
 		req.entities = {};
 	}));
 
-	app.get(
-		'/.well-known/acme-challenge/5ZNOQ-1kdXVU7wQagPYzh4vBaIqhZrz4ybpA-uqzB0c',
-		app.async(async (req, res) => {
-			res.header('Content-Type', 'text/plain');
-			res.send('5ZNOQ-1kdXVU7wQagPYzh4vBaIqhZrz4ybpA-uqzB0c.L6gGKzYokAOkGX6skL8ZPVIyHqt-8VGhda9QfSkvQtk');
-		})
-	);
+	app.use(app.async(async (req, res) => {
+		res.header('Access-Control-Allow-Origin', '*');
+		res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
+	}));
 
 	app.use(require('./lib/middleware'));
 	app.use('/', require('./lib/api'));
