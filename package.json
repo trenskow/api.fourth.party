@@ -17,6 +17,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "express-sslify": "^1.2.0",
     "hat": "0.0.3",
     "isvalid": "^1.6.6",
     "jsonerr": "^1.1.0",

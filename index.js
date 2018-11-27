@@ -3,7 +3,8 @@
 const mongoose = require('mongoose'),
 	express = require('express'),
 	jsonerr = require('jsonerr'),
-	ApiError = require('./lib/model/apierror');
+	ApiError = require('./lib/model/apierror'),
+	enforce = require('express-sslify');
 
 mongoose.Promise = Promise;
 
@@ -34,6 +35,8 @@ mongoose.connect(process.env.MONGODB || 'mongodb://localhost/fourthparty', {
 }).then(() => {
 
 	const app = express();
+
+	app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 	app.use(app.async(async (req) => {
 		req.entities = {};
