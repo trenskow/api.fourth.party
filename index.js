@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGODB || 'mongodb://localhost/fourthparty', {
 	useNewUrlParser: true,
 	useCreateIndex: true
 }).catch((err) => {
-	console.error(`Could not connect to MongoDB:; ${err.message}`);
+	console.error(`Could not connect to MongoDB: ${err.message}`);
 	process.exit(1);
 }).then(() => {
 
